@@ -56,6 +56,18 @@ subclass hides one of the superclass' variable, you can use super.variableName t
 subclass definition.
 
 
+### More on Constructors
+Recall that the subclass inherits all the variables and methods from its superclasses. Nonetheless, the subclass does not
+inherit the constructors of its superclasses. Each class in Java defines its own constructors. In the body of a constructor,
+you can use super(args) to invoke a constructor of its immediate superclass. Note that super(args), if it is used, must
+be the first statement in the subclass' constructor. If it is not used in the constructor, Java compiler automatically
+insert a super() statement to invoke the no-arg constructor of its immediate superclass. This follows the fact that the
+parent must be born before the child can be born. You need to properly construct the superclasses before you can construct
+the subclass.
+
+All in all, we have to remember that each class in Java should define its own constructor(s).
+
+
 ### Tools
 
  You can use any text editors for this project (I would recommend you to use an IDE). I am using IntelliJ which is a

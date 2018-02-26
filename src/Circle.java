@@ -18,7 +18,7 @@ public class Circle {
         this.color = color;
     }
 
-    // Getters and Setters
+    // Getters and Setters for the private fields
     public double getRadius() {
         return this.radius;
     }
