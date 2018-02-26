@@ -6,7 +6,7 @@ public class Cylinder extends Circle {
     private double height;
     // it automatically inherits all the data fields in Circle
     // it also inherits the methods in Circle
-    // this class only does not inherit the private fields and methods.
+    // this class only does not inherit private methods and fields.
 
     // Constructors
     public Cylinder() {
@@ -33,14 +33,18 @@ public class Cylinder extends Circle {
     public void setHeight(double height) {
         this.height = height;
     }
-
-    // Return the volume of this Cylinder
-    public double getVolume() {
-        return getArea()*height;   // Use Circle's getArea()
+    // Override the getArea() method inherited from superclass Circle
+    @Override
+    public double getArea() {
+        return 2*Math.PI*getRadius()*height + 2*super.getArea();
     }
-
-    // Describle itself
+    // Need to change the getVolume() as well
+    public double getVolume() {
+        return super.getArea()*height;   // use superclass' getArea() because we need the base area to compute the volume
+    }
+    // Override the inherited toString()
+    @Override
     public String toString() {
-        return "This is a Cylinder";  // to be refined later
+        return "Cylinder[" + super.toString() + ",height=" + height + "]";
     }
 }

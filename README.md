@@ -27,6 +27,35 @@ class Cylinder extends Circle {......}
 
 Reusability is one of the most important properties of OOP.
 
+## Method Overriding & Variable Hiding
+
+A subclass inherits all the member variables and methods from its superclasses (the immediate parent and all its ancestors).
+It can use the inherited methods and variables as they are. It may also override an inherited method by providing its own
+version, or hide an inherited variable by defining a variable of the same name.
+
+
+
+### @Override Annotaion
+
+The "@Override" is known as annotation (introduced in JDK 1.5), which asks compiler to check whether there is such a method
+in the superclass to be overridden. This helps greatly if you misspell the name of the method to be overridden. For example,
+suppose that you wish to override method toString() in a subclass. If @Override is not used and toString() is misspelled as
+TOString(), it will be treated as a new method in the subclass, instead of overriding the superclass. If @Override is used,
+the compiler will signal an error. @Override annotation is optional, but certainly nice to have. Annotations are not programming
+constructs. They have no effect on the program output. It is only used by the compiler, discarded after compilation, and not
+used by the runtime.
+
+
+### super Keyword
+Recall that inside a class definition, you can use the keyword this to refer to this instance. Similarly, the keyword super
+refers to the superclass, which could be the immediate parent or its ancestor. The keyword super allows the subclass to
+access superclass' methods and variables within the subclass' definition. For example, super() and super(argumentList)
+can be used invoke the superclass’ constructor. If the subclass overrides a method inherited from its superclass, says
+getArea(), you can use super.getArea() to invoke the superclass' version within the subclass definition. Similarly, if your
+subclass hides one of the superclass' variable, you can use super.variableName to refer to the hidden variable within the
+subclass definition.
+
+
 ### Tools
 
  You can use any text editors for this project (I would recommend you to use an IDE). I am using IntelliJ which is a

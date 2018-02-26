@@ -2,7 +2,7 @@ public class Circle {
     // private instance variables
     private double radius;
     private String color;  // String is a built-in class in Java
-    // we make them private to make the code encapsulated
+    // we make them private to make sure that the data is encapsulated
 
     // Constructors
     public Circle() {
