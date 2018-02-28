@@ -68,6 +68,26 @@ the subclass.
 All in all, we have to remember that each class in Java should define its own constructor(s).
 
 
+### Default no-arg Constructor
+If no constructor is defined in a class, Java compiler automatically create a no-argument (no-arg) constructor, that simply issues a super() call, as follows:
+```Java
+// If no constructor is defined in a class, compiler inserts this no-arg constructor
+public ClassName () {
+   super();   // call the superclass' no-arg constructor
+}
+```
+Take note that:
+
+-The default no-arg constructor will not be automatically generated, if one (or more) constructor was defined. In other words, you need to define no-arg constructor explicitly if other constructors were defined.
+
+-If the immediate superclass does not have the default constructor (it defines some constructors but does not define a no-arg constructor), you will get a compilation error in doing a super() call. Note that Java compiler inserts a super() as the first statement in a constructor if there is no super(args).
+
+### Important Notes:
+
+Java does not support multiple inheritance. All the classes can have only one super class. 
+
+
+
 ### Tools
 
  You can use any text editors for this project (I would recommend you to use an IDE). I am using IntelliJ which is a
